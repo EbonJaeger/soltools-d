@@ -9,6 +9,23 @@ Tools to make Solus packaging even easier.
 - [x] Index the local repo
 - [ ] Initialize a new package repo
 
+## Installation
+
+To build `soltools-d`, you'll need a D compiler, meson, and Dub.
+
+Once you have those, configure and build with:
+
+```bash
+meson --prefix=%PREFIX% build
+ninja -C build
+```
+
+Then, install it with:
+
+```bash
+sudo ninja install -C build
+```
+
 ## Usage
 
 `soltools-d subcommand [OPTIONS]`
