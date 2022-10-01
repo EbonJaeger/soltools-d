@@ -1,0 +1,11 @@
+{
+  "authors": [
+    "Evan Maddock <maddock.evan@vivaldi.net>"
+  ],
+  "copyright": "Copyright © 2022 Evan Maddock",
+  "description": "Utilities to make packaging on Solus even easier",
+  "license": "Apache-2.0",
+  "version": "0.1.0",
+  "name": "soltools-d",
+  "targetPath": "bin"
+}
