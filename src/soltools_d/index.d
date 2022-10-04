@@ -3,7 +3,7 @@ module soltools_d.index;
 import std.process;
 import std.stdio;
 
-void index(in string localRepoDir)
+auto index(scope string localRepoDir)
 {
   auto pid = spawnProcess(
     ["eopkg", "index", "--skip-signing", localRepoDir],
@@ -11,13 +11,6 @@ void index(in string localRepoDir)
     Config.none,
     localRepoDir
   );
-  auto status = wait(pid);
 
-  if (status != 0)
-  {
-    writeln("error indexing the local repo");
-    return;
-  }
-
-  return;
+  return wait(pid);
 }

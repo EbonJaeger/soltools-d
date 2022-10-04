@@ -40,10 +40,11 @@ int copyFiles(string[] args)
   foreach (entry; entries)
   {
     auto name = baseName(entry.name);
+    auto outPath = buildPath(localRepoDir, name);
 
     try
     {
-      entry.copy(localRepoDir ~ name);
+      entry.copy(outPath);
     }
     catch (FileException e)
     {
@@ -60,15 +61,11 @@ int copyFiles(string[] args)
   }
 
   // Index the repo
-  try
+  auto status = index(localRepoDir);
+  if (status != 0)
   {
-    index(localRepoDir);
-  }
-  catch (Exception e)
-  {
-    writeln("error indexing repo:", e.msg);
-    return 1;
+    writeln("error indexing local repository");
   }
 
-  return 0;
+  return status;
 }
