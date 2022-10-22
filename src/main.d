@@ -6,6 +6,7 @@ import std.getopt;
 int main(string[] args)
 {
   auto subcommands = [
+    "clean": &cleanFiles,
     "copy": &copyFiles,
     "index": &indexRepo,
   ];

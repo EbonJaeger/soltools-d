@@ -2,6 +2,7 @@ soltools_d_sources = [
   'main.d',
   'soltools_d/index.d',
   'soltools_d/package.d',
+  'soltools_d/cli/clean.d',
   'soltools_d/cli/copy.d',
   'soltools_d/cli/index.d',
   'soltools_d/cli/package.d'
