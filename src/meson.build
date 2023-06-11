@@ -5,6 +5,7 @@ soltools_d_sources = [
   'soltools_d/cli/clean.d',
   'soltools_d/cli/copy.d',
   'soltools_d/cli/index.d',
+  'soltools_d/cli/initialize.d',
   'soltools_d/cli/package.d'
 ]
 

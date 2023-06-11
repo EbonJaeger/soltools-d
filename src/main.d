@@ -9,6 +9,7 @@ int main(string[] args)
     "clean": &cleanFiles,
     "copy": &copyFiles,
     "index": &indexRepo,
+    "init": &initializeRepo,
   ];
 
   if (args.length < 2)

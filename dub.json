@@ -2,7 +2,7 @@
   "authors": [
     "Evan Maddock <maddock.evan@vivaldi.net>"
   ],
-  "copyright": "Copyright © 2022 Evan Maddock",
+  "copyright": "Copyright © Evan Maddock",
   "description": "Utilities to make packaging on Solus even easier",
   "license": "Apache-2.0",
   "version": "0.1.0",
