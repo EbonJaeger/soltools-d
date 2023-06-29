@@ -1,36 +1,29 @@
 module soltools_d.cli.index;
 
 import soltools_d;
-import std.getopt;
 import std.process;
 import std.stdio;
 
-int indexRepo(string[] args)
-{
-  string localRepoDir;
+import dopt;
 
-  auto opts = getopt(
-    args,
-    "repo-location", "Repository Location", &localRepoDir,
-  );
+@Command("index") @Help("index packages in the local repository")
+package struct Index {
+    @Option() @Long("repo-location") @Short() @Help("location of the local repository") 
+    string location = defaultRepoLoc;
 
-  if (opts.helpWanted)
-  {
-    defaultGetoptPrinter("soltools-d index --repo-location <path>", opts.options);
-    return 1;
-  }
-
-  if (localRepoDir is null)
-  {
-    localRepoDir = defaultRepoLoc;
-  }
-
-  // Index the repo
-  auto status = index(localRepoDir);
-  if (status != 0)
-  {
-    writeln("error indexing local repository");
-  }
-
-  return status;
+    /**
+    * Main entry point for the Index subcommand.
+    *
+    * This will index all packages in the local eopkg
+    * repository.
+    */
+    void run()
+    {
+        // Index the repo
+        auto status = index(location);
+        if (status != 0)
+        {
+            writeln("error indexing local repository");
+        }
+    }
 }

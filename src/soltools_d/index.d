@@ -5,12 +5,12 @@ import std.stdio;
 
 auto index(scope string localRepoDir)
 {
-  auto pid = spawnProcess(
-    ["eopkg", "index", "--skip-signing", localRepoDir],
-    null,
-    Config.none,
-    localRepoDir
-  );
+    auto pid = spawnProcess(
+        ["eopkg", "index", "--skip-signing", localRepoDir],
+        null,
+        Config.none,
+        localRepoDir
+    );
 
-  return wait(pid);
+    return wait(pid);
 }
