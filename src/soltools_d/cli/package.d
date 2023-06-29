@@ -10,12 +10,12 @@ import soltools_d.cli.initialize;
 
 import dopt;
 
-private alias Subcommand = SumType!(Clean, Copy, Index, Initialize);
+private alias CliSubcommand = SumType!(Clean, Copy, Index, Initialize);
 
 @Command("soltools-d") @Help("helper utility for Solus packaging") @Version("0.1.0")
 private struct Soltools {
     @Subcommand()
-    Subcommand subcommand;
+    CliSubcommand subcommand;
 }
 
 public int run(string[] args)
