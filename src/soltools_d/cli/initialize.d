@@ -8,11 +8,9 @@ import dopt;
 
 @Command("init") @Help("initialize a new package git repository")
 package struct Initialize {
-    @Required() @Help("the name of the package")
+    @Positional() @Required() @Help("the name of the package")
     string packageName;
-    @Required() @Help("the version of the package")
-    string packageVersion;
-    @Required() @Help("the URL of the source tarball to download")
+    @Positional() @Required() @Help("the URL of the source tarball to download")
     string url;
 
     /**
